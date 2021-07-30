@@ -15,4 +15,9 @@ export default class StoriesController {
     storiesService.getAllStories()
     // _draw()
   }
+
+  read(id) {
+    console.log('you are trying to read:', id)
+    storiesService.read(id)
+  }
 }

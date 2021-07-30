@@ -16,9 +16,8 @@ export default class Story {
               <div class="px-2 d-flex flex-column">
                 <i class="mdi mdi-book-plus-multiple-outline"></i><span>${this.upVote - this.downVote}</span><i class="mdi mdi-book-plus-multiple"></i>
               </div>
-              <div>
-                <img src="${this.imgUrl}" class="img-fluid p-2">
-              </div>
+              <div class="action"  onclick="app.storiesController.read('${this.id}')">
+                <img src="${this.imgUrl}" class="float-left img-preview img-fluid p-2">
               <div class="d-flex flex-column">
                 <small>NAME</small>
                 <h5 class="mt-1">${this.title}</h5>
@@ -26,13 +25,14 @@ export default class Story {
                   ${this.body}
                 </h6>
               </div>
+              </div>
             </div>`
   }
 
   get Template() {
     return `
       <div>
-                    <img class="img-fluid float-left m-3" src="${this.imgUrl}"></img>
+                    <img class="img-fluid img-viewport float-left m-3" src="${this.imgUrl}"></img>
                   <h2 class="text-center">${this.title}</h2>
                   <div>
                     <p>${this.body}</p>

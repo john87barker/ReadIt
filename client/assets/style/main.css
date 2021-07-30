@@ -10743,4 +10743,18 @@ main {
   overflow: auto;
 }
 
+.img-preview {
+  max-height: 100px;
+  max-width: 100px;
+}
+
+.img-viewport {
+  max-height: 300px;
+  max-width: 300px;
+}
+
+.action {
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=main.css.map */
