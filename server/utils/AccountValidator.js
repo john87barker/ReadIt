@@ -1,5 +1,5 @@
 import { Auth0Provider } from '@bcwdev/auth0provider'
-import { accountService } from '../services/AccountService'
+import { accountsService } from '../services/AccountsService'
 
 export async function AccountValidator(req, res, next) {
   try {
@@ -11,7 +11,7 @@ export async function AccountValidator(req, res, next) {
     if (!userInfo.id) {
       throw new Error('[MISSING_AUTH0_RULE] Unable to create account: Missing Extend UserInfo rule in Auth0 account')
     }
-    req.account = await accountService.getAccount(userInfo)
+    req.account = await accountsService.getAccount(userInfo)
     next()
   } catch (e) {
     next(e)

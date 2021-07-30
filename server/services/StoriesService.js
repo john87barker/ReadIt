@@ -3,11 +3,11 @@ import { BadRequest } from '../utils/Errors'
 
 class StoriesService {
   // NOTE this is relationship between stories and Users
-  async getStoriesByUserId(query = {}) {
+  async getStoriesByUserId(query) {
     return await dbContext.Stories.find(query)
   }
 
-  async getAll(query) {
+  async getAll(query = {}) {
     return await dbContext.Stories.find(query)
   }
 
