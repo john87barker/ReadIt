@@ -7,7 +7,7 @@ export class CommentsController extends BaseController {
     super('api/comments')
     this.router
       .get('', this.getAll)
-      .get('', this.getById)
+      .get('/:id', this.getById)
       // NOTE take up one more level as well
       .get('/:id/users', this.getCommentsByStoryId)
     // NOTE potentially get rid of below
