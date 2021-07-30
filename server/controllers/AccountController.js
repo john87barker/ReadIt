@@ -9,6 +9,16 @@ export class AccountController extends BaseController {
       .use(Auth0Provider.getAuthorizedUserInfo)
       .get('', this.getUserAccount)
       .get('/:id/stories', this.getStoriesByAccountId)
+      .get('/:id/comments', this.getCommentsByAccountId)
+  }
+
+  async getCommentsByAccountId(req, res, next) {
+    try {
+      const comments = await accountsService.getCommentsByAccountId({ userId: req.params.id })
+      res.send(comments)
+    } catch (error) {
+      next(error)
+    }
   }
 
   async getStoriesByAccountId(req, res, next) {
