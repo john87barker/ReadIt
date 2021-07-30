@@ -10,12 +10,18 @@ class StoriesService {
 
   async getAllStories() {
     try {
-      const res = await api.get('stories')
+      const res = await api.get('api/stories')
       console.log(res.data)
       ProxyState.stories = res.data.map(s => new Story(s))
     } catch (error) {
       console.error('service', error)
     }
+  }
+
+  async read(id) {
+    const story = ProxyState.stories.find(s => s.id == id)
+    document.getElementById('viewport-story').innerHTML = story.Template
+    console.log(story)
   }
 }
 export const storiesService = new StoriesService()
