@@ -5,23 +5,9 @@ import { isValidProp } from './Utils/isValidProp.js'
 class AppState extends EventEmitter {
   user = {}
   account = {}
-  stories = [{
-    title: 'demoTitle',
-    body: 'lorem ipsum professional language in the story',
-    userId: 'demoUserId',
-    upVote: 3,
-    downVote: 2,
-    imgUrl: 'https://place-hold.it/300'
-  }]
+  stories = []
 
-  comments = [{
-    userId: 'demoUserId',
-    storyId: 'demoStoryId',
-    body: 'lorem ipsum professional language being used',
-    id: 'demoId',
-    upVote: 1,
-    downVote: 2
-  }]
+  comments = []
 
   socketData = []
 }
