@@ -4,11 +4,10 @@ const Schema = mongoose.Schema
 const Comment = new Schema(
   {
     userId: { type: String, required: true },
-    upVote: { type: String },
-    downVote: { type: String },
+    upVote: { type: Number },
+    downVote: { type: Number },
     storyId: { type: String, required: true },
-    body: { type: String, required: true },
-    id: { type: String, required: true }
+    body: { type: String, required: true }
   },
   { timestamps: true, toJSON: { virtuals: true } }
 )

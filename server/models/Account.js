@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
-export const AccountSchema = new Schema(
+const AccountSchema = new Schema(
   {
     subs: [{ type: String, unique: true }],
     email: { type: String, lowercase: true, unique: true },
@@ -11,3 +11,5 @@ export const AccountSchema = new Schema(
   },
   { timestamps: true, toJSON: { virtuals: true } }
 )
+
+export default AccountSchema

@@ -5,16 +5,15 @@ export class UsersController extends BaseController {
   constructor() {
     super('api/users')
     this.router
-
+    // don't need get and post
       .get('', this.getById)
       .post('', this.create)
-      .put('/:id', this.edit)
-      .delete('/:id', this.destroy)
   }
 
+  // TODO check about calling the id
   async getById(req, res, next) {
     try {
-      const user = await usersService.getById(req.params.id)
+      const user = await usersService.getById()
       res.send(user)
     } catch (error) {
       next(error)

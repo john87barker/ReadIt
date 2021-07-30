@@ -2,6 +2,11 @@ import { dbContext } from '../db/DbContext'
 import { BadRequest } from '../utils/Errors'
 
 class CommentsService {
+  // NOTE this is relationship between comments and story
+  async getCommentsByStoryId(query) {
+    return await dbContext.Comments.find(query)
+  }
+
   // NOTE this is relationship between comments and Users
   async getCommentsByUserId(query) {
     return await dbContext.Comments.find(query)

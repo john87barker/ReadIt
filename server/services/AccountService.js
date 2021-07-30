@@ -10,7 +10,7 @@ import { dbContext } from '../db/DbContext'
 async function createAccountIfNeeded(account, user) {
   if (!account) {
     user._id = user.id
-    account = await dbContext.Account.create({
+    account = await dbContext.Accounts.create({
       ...user,
       subs: [user.sub]
     })
@@ -55,7 +55,7 @@ class AccountService {
         $or: [{ name: filter }, { email: filter }]
       }
     }
-    return await dbContext.Account
+    return await dbContext.Accounts
       .aggregate([q])
       .project('email picture name')
       .collation({ locale: 'en_US', strength: 1 })
@@ -68,7 +68,7 @@ class AccountService {
    * @param {string} email
    */
   async findProfile(email) {
-    return await dbContext.Account.findOne({ email })
+    return await dbContext.Accounts.findOne({ email })
       .select('name email picture')
   }
 
@@ -81,7 +81,7 @@ class AccountService {
    * @param {any} user
    */
   async getAccount(user) {
-    let account = await dbContext.Account.findOne({
+    let account = await dbContext.Accounts.findOne({
       _id: user.id
     })
     account = await createAccountIfNeeded(account, user)
@@ -96,12 +96,25 @@ class AccountService {
    */
   async updateAccount(user, body) {
     const update = sanitizeBody(body)
-    const account = await dbContext.Account.findOneAndUpdate(
+    const account = await dbContext.Accounts.findOneAndUpdate(
       { _id: user.id },
       { $set: update },
       { runValidators: true, setDefaultsOnInsert: true, new: true }
     )
+
     return account
   }
+
+  // NOTE don't need edit? because of above?
+  // async edit(body) {
+  //   await this.getById(body.id)
+  //   const user = await dbContext.Accounts.findByIdAndUpdate(body.id, body, { new: true, runValidators: true })
+  //   return user
+  // }
+
+  // async destroy(id) {
+  //   await this.getById(id)
+  //   return await dbContext.Accounts.findByIdAndDelete(id)
+  // }
 }
 export const accountService = new AccountService()
