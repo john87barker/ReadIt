@@ -8,21 +8,9 @@ export class CommentsController extends BaseController {
     this.router
       .get('', this.getAll)
       .get('/:id', this.getById)
-    // NOTE potentially get rid of below
-      .get('/:id/stories', this.getCommentsByUserId)
       .post('', this.create)
       .put('/:id', this.edit)
       .delete('/:id', this.destroy)
-  }
-
-  // NOTE this is relationship between comments and Users
-  async getCommentsByUserId(req, res, next) {
-    try {
-      const comments = await commentsService.getCommentsByUserId({ userId: req.params.id })
-      res.send(comments)
-    } catch (error) {
-      next(error)
-    }
   }
 
   async getAll(req, res, next) {
