@@ -7,7 +7,7 @@ export class StoriesController extends BaseController {
     super('api/stories')
     this.router
       .get('', this.getAll)
-      .get('', this.getById)
+      .get('/:id', this.getById)
       // NOTE move following to the user router
       .get('/:id/users', this.getStoriesByUserId)
       // NOTE make one to get comments with each of the stories
