@@ -42,7 +42,7 @@ function sanitizeBody(body) {
   return writable
 }
 
-class AccountService {
+class AccountsService {
   /**
     * Returns a list user profiles from a query search of name or email likeness
     * limits to first 20 without offset
@@ -104,5 +104,9 @@ class AccountService {
 
     return account
   }
+
+  async getStoriesByAccountId(query) {
+    return await dbContext.Stories.find(query)
+  }
 }
-export const accountService = new AccountService()
+export const accountsService = new AccountsService()
