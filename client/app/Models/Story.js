@@ -20,7 +20,7 @@ export default class Story {
                 <img src="${this.imgUrl}" class="img-fluid p-2">
               </div>
               <div class="d-flex flex-column">
-                <small>${this.accountId.name}</small>
+                <small>NAME</small>
                 <h5 class="mt-1">${this.title}</h5>
                 <h6>
                   ${this.body}

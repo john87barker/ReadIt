@@ -10,7 +10,7 @@ class StoriesService {
 
   async getAllStories() {
     try {
-      const res = await api.get('stories')
+      const res = await api.get('api/stories')
       console.log(res.data)
       ProxyState.stories = res.data.map(s => new Story(s))
     } catch (error) {
