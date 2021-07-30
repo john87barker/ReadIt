@@ -5,8 +5,24 @@ import { isValidProp } from './Utils/isValidProp.js'
 class AppState extends EventEmitter {
   user = {}
   account = {}
-  /** @type {import('./Models/Value').Value[]} */
-  values = []
+  stories = [{
+    title: 'demoTitle',
+    body: 'lorem ipsum professional language in the story',
+    userId: 'demoUserId',
+    upVote: 3,
+    downVote: 2,
+    imgUrl: 'https://place-hold.it/300'
+  }]
+
+  comments = [{
+    userId: 'demoUserId',
+    storyId: 'demoStoryId',
+    body: 'lorem ipsum professional language being used',
+    id: 'demoId',
+    upVote: 1,
+    downVote: 2
+  }]
+
   socketData = []
 }
 
