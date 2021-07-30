@@ -18,3 +18,12 @@ main {
 #viewport {
   height: 80vh;
 }
+
+.comment {
+  border: 1px solid rebeccapurple;
+}
+
+#viewport-comments {
+  max-height: 25vh;
+  overflow: auto;
+}
