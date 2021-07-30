@@ -10,6 +10,7 @@ export default class Story {
   }
 
   get PreviewTemplate() {
+    console.log('a story preview was drawn')
     return `
     <div class="my-1 col-12 d-flex align-items-start p-2 bg-light">
               <div class="px-2 d-flex flex-column">

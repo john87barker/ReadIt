@@ -5,7 +5,7 @@ import { api } from './AxiosService.js'
 class AccountService {
   async getAccount() {
     try {
-      const res = await api.get('/account')
+      const res = await api.get('api/accounts')
       ProxyState.account = res.data
     } catch (err) {
       logger.error(err)
