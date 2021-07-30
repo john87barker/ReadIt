@@ -8,8 +8,6 @@ export class CommentsController extends BaseController {
     this.router
       .get('', this.getAll)
       .get('/:id', this.getById)
-      // NOTE take up one more level as well
-      .get('/:id/users', this.getCommentsByStoryId)
     // NOTE potentially get rid of below
       .get('/:id/stories', this.getCommentsByUserId)
       .post('', this.create)
@@ -21,16 +19,6 @@ export class CommentsController extends BaseController {
   async getCommentsByUserId(req, res, next) {
     try {
       const comments = await commentsService.getCommentsByUserId({ userId: req.params.id })
-      res.send(comments)
-    } catch (error) {
-      next(error)
-    }
-  }
-
-  // NOTE this is relationship between comments and Users
-  async getCommentsByStoryId(req, res, next) {
-    try {
-      const comments = await commentsService.getCommentsByStoryId({ storyId: req.params.id })
       res.send(comments)
     } catch (error) {
       next(error)

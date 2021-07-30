@@ -7,6 +7,10 @@ class StoriesService {
     return await dbContext.Stories.find(query)
   }
 
+  async getCommentsByStoryId(query) {
+    return await dbContext.Comments.find(query)
+  }
+
   async getAll(query = {}) {
     return await dbContext.Stories.find(query)
   }
