@@ -10,7 +10,21 @@
   <title>ReadIt</title>
 </head>
 
-<body>
+<style>
+  body.debug .container,
+  body.debug .container-fluid {
+    outline: 2px double blue;
+    outline-offset: -2px;
+  }  body.debug .row {
+    outline: 2px dashed red;
+    outline-offset: -2px;
+  }  body.debug [class*="col-"] {
+    outline: 2px dotted forestgreen;
+    outline-offset: -3px;
+  }
+</style>
+
+<body class="debug">
   <header>
     <nav class="navbar navbar-dark navbar-expand bg-primary text-light">
       <a class="navbar-brand" href="#">
@@ -33,18 +47,18 @@
   <main id="app">
     <div class="container-fluid">
       <div class="row my-3">
-        <div class="col-5">
-          <div class="card p-2 skeleton-loader">
-            <div class="card-title p-2">
-              <div class="d-flex align-items-center">
-                <div class="skeleton-loader avatar"></div>
-                <div class="skeleton-loader text mx-2"></div>
-              </div>
-            </div>
-            <div class="card-body border-top">
-              <div class="skeleton-loader text block"></div>
-              <div class="skeleton-loader text block"></div>
-              <div class="skeleton-loader text"></div>
+        <div class="col-5" id="previews">
+          <h3>Previews</h3>
+        </div>
+        <div class="col-7" id="viewport">
+          <div class="row h-100">
+              <div class="col card">
+                <div class="card-title">
+                  Title Text
+                </div>
+                <div class="card-body border-top">
+                  This is text
+                </div>
             </div>
           </div>
         </div>

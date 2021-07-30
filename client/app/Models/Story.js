@@ -6,6 +6,6 @@ export default class Story {
     this.userId = userId
     this.upVote = upVote
     this.downVote = downVote
-    this.imgUrl = imgUrl || 'https://place-hold.it/300'
+    this.imgUrl = imgUrl || 'https://picsum.photos/300'
   }
 }
