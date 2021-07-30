@@ -8,9 +8,20 @@ export class StoriesController extends BaseController {
     this.router
       .get('', this.getAll)
       .get('', this.getById)
+      .get('/:id/users', this.getStoriesByUserId)
       .post('', this.create)
       .put('/:id', this.edit)
       .delete('/:id', this.destroy)
+  }
+
+  // NOTE this is relationship between stories and Users
+  async getStoriesByUserId(req, res, next) {
+    try {
+      const stories = await storiesService.getStoriesByUserId({ userId: req.params.id })
+      res.send(stories)
+    } catch (error) {
+      next(error)
+    }
   }
 
   async getAll(req, res, next) {
