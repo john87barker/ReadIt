@@ -104,17 +104,5 @@ class AccountService {
 
     return account
   }
-
-  // NOTE don't need edit? because of above?
-  // async edit(body) {
-  //   await this.getById(body.id)
-  //   const user = await dbContext.Accounts.findByIdAndUpdate(body.id, body, { new: true, runValidators: true })
-  //   return user
-  // }
-
-  // async destroy(id) {
-  //   await this.getById(id)
-  //   return await dbContext.Accounts.findByIdAndDelete(id)
-  // }
 }
 export const accountService = new AccountService()
