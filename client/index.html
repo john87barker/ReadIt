@@ -42,18 +42,48 @@
           <!-- NAVLINKS -->
         </div>
       </div>
+      <button class="btn btn-dark">CREATE</button>
       <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
     </nav>
   </header>
   <main id="app">
     <div class="container-fluid">
-      <div class="row my-3">
-        <div class="col-5" id="previews">
-          <h3>Previews</h3>
+      <div class="row my-3 justify-content-around">
+        <div class="col-5">
+          <div class="row" id="previews">
+            <!-- SECTION Preview Template Start -->
+            <div class="my-1 col-12 d-flex align-items-start p-2 bg-light">
+              <div class="px-2 d-flex flex-column">
+                <i class="mdi mdi-book-plus-multiple-outline"></i><span>X</span><i class="mdi mdi-book-plus-multiple"></i>
+              </div>
+              <div>
+                <img src="https://picsum.photos/100" class="img-fluid p-2">
+              </div>
+              <div class="d-flex flex-column">
+                <small>USERNAME</small>
+                <h5 class="mt-1">TITLE</h5>
+                <h6>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis consequatur tempore dolorum.
+                </h6>
+              </div>
+            </div>
+            <!-- SECTION Preview Template End -->
+            <div class="col-12 d-flex align-items-start p-2 bg-light">
+              <div class="px-2 d-flex flex-column">
+                <i class="mdi mdi-book-plus-multiple-outline"></i><span>X</span><i class="mdi mdi-book-plus-multiple"></i>
+              </div>
+              <div class="d-flex flex-column">
+                <small>USERNAME</small>
+                <h6>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis consequatur tempore dolorum.
+                </h6>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-7 h-100" id="viewport">
+        <div class="col-6 h-100" id="viewport">
           <div class="row">
-                <div class="col card">
+                <div class="col card shadow" id="viewport-story">
                   <div>
                     <img class="img-fluid float-left m-3" src="https://picsum.photos/300"></img>
                   <h2 class="text-center">Title of the book</h2>
@@ -64,14 +94,16 @@
                 </div>
           </div>
           <div class="row" id="viewport-comments">
-                <div class="col-12 d-flex align-items-center p-2 bg-light">
+            <!-- SECTION Template Comment Start -->
+                <div class="my-1 col-12 d-flex align-items-start p-2 bg-light" >
                   <div class="px-2 d-flex flex-column"><i class="mdi mdi-book-plus-multiple-outline"></i><span>X</span><i class="mdi mdi-book-minus-multiple"></i></div>
                   <div class="d-flex flex-column">
                     <small>USERNAME</small>
-                <h6 class=py-1>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora vero, nobis aliquid animi eius eligendi nostrum, explicabo itaque repudiandae ducimus exercitationem porro officia consequuntur reprehenderit.</h6>
+                <h6 class="py-1">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora vero, nobis aliquid animi eius eligendi nostrum, explicabo itaque repudiandae ducimus exercitationem porro officia consequuntur reprehenderit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, numquam? In ducimus nemo vel, aut quisquam facilis mollitia amet labore? Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti laudantium, beatae voluptatem ut tempore quas voluptatum nemo ratione. Ducimus ad, tempora dolor deserunt voluptatibus similique ullam maiores assumenda totam unde.</h6>
                   </div>
                 </div>
+                <!-- Template Comment End -->
                 <div class="col-12 d-flex align-items-center p-2 bg-light">
                   <div class="px-2 d-flex flex-column"><i class="mdi mdi-book-plus-multiple-outline"></i><span>X</span><i class="mdi mdi-book-minus-multiple"></i></div>
                   <div class="d-flex flex-column">
