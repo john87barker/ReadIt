@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const Story = new Schema(
   {
-    userId: { type: String, required: true },
+    accountId: { type: String, required: true },
     upVote: { type: Number },
     downVote: { type: Number },
     title: { type: String, required: true },
