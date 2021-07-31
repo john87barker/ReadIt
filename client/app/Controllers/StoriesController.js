@@ -2,6 +2,7 @@ import { ProxyState } from '../AppState.js'
 import { picsumApi } from '../Services/AxiosService.js'
 import { storiesService } from '../Services/StoriesService.js'
 import Story from '../Models/Story.js'
+import { commentsService } from '../Services/CommentsService.js'
 
 function _draw() {
   console.log('draw function ran')
@@ -21,6 +22,7 @@ export default class StoriesController {
   read(id) {
     console.log('you are trying to read:', id)
     storiesService.read(id)
+    this.getAllCommentsByStoryId(id)
   }
 
   async getRandomImg() {
@@ -47,5 +49,13 @@ export default class StoriesController {
     await storiesService.createStory(new Story(rawStory))
     console.log(rawStory)
     form.reset()
+  }
+
+  async getAllCommentsByStoryId(id) {
+    try {
+      await commentsService.getAllCommentsByStoryId(id)
+    } catch (error) {
+      console.error(error)
+    }
   }
 }
