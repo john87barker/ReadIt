@@ -1,11 +1,12 @@
 export default class Story {
-  constructor({ accountId, upVote = 0, downVote = 0, title, body, imgUrl }) {
+  constructor({ accountId, upVote = 0, downVote = 0, title, body, imgUrl, id }) {
     this.title = title
     this.body = body
     this.accountId = accountId
     this.upVote = upVote
     this.downVote = downVote
     this.imgUrl = imgUrl || 'https://picsum.photos/300'
+    this.id = id || null
   }
 
   get PreviewTemplate() {
@@ -15,7 +16,7 @@ export default class Story {
               <div class="px-2 d-flex flex-column">
                 <i class="mdi mdi-book-plus-multiple-outline"></i><span>${this.upVote - this.downVote}</span><i class="mdi mdi-book-plus-multiple"></i>
               </div>
-              <div class="action"  onclick="app.storiesController.read('${this.id}')">
+              <div class="action w-100"  onclick="app.storiesController.read('${this.id}')">
                 <img src="${this.imgUrl}" class="float-left img-preview img-fluid p-2">
               <div class="d-flex flex-column">
                 <small>NAME</small>
