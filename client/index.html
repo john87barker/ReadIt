@@ -42,48 +42,12 @@
           <!-- NAVLINKS -->
         </div>
       </div>
-
-      <!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" onclick="app.storiesController.getRandomImg()">CREATE</button>      
+      <button class="btn btn-dark">CREATE</button>
       <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
     </nav>
   </header>
   <main id="app">
     <div class="container-fluid">
-
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Tell Us a Story:</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-      <div class="modal-body">
-        <div class="m-2 text-center" id="random-image">
-          <img src="" class="img-fluid" alt="">
-        </div>
-        <form class="row" action="" onsubmit="app.storiesController.create()">
-          <div class="mb-3 input-group px-2">
-    <label for="title" class="form-label "></label>
-    <input type="text " placeholder="Your Title" class="form-control" id="title" aria-describedby="title" name="title">
-  </div>
-          <div class="input-group px-2">
-            <textarea class="form-control" aria-label="With textarea" placeholder="What story does this image tell..." maxlength="1000" minlength="10" name="body"></textarea>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="submit">SUBMIT</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </form>
-    </div>
-
-  </div>
-</div>
-
       <div class="row my-3 justify-content-around">
         <div class="col-5">
           <div class="row" id="previews">
@@ -187,9 +151,7 @@
       </div>
     </div>
   </footer>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.auth0.com/js/auth0-spa-js/1.15/auth0-spa-js.production.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/jakeoverall/auth0provider-client/browser/AuthProvider.browser.js"></script>
