@@ -19,7 +19,7 @@ class StoriesService {
   }
 
   async read(id) {
-    const story = ProxyState.stories.find(s => s.id == id)
+    const story = ProxyState.stories.find(s => s.id === id)
     document.getElementById('viewport-story').innerHTML = story.Template
     console.log(story)
   }

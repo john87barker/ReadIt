@@ -2,7 +2,9 @@ import { ProxyState } from '../AppState.js'
 import { commentsService } from '../Services/CommentsService.js'
 
 function _draw() {
-
+  let template = ''
+  ProxyState.comments.forEach(comment => { template += comment.Template })
+  document.getElementById('viewport-comments').innerHTML = template
 }
 
 export default class CommentsController {
@@ -22,6 +24,7 @@ export default class CommentsController {
       }
 
       await commentsService.createComment(rawComment)
+      form.reset()
     } catch (error) {
       console.error(error)
     }
