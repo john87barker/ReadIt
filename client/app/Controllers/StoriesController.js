@@ -36,16 +36,16 @@ export default class StoriesController {
   }
 
   async create() {
-    // event.preventDefault()
+    event.preventDefault()
     const form = event.target
     const rawStory = {
       accountId: ProxyState.account._id,
       title: form.title.value,
       body: form.body.value,
       imgUrl: ProxyState.image.download_url
-
     }
-    console.log(rawStory, new Story(rawStory))
+    await storiesService.createStory(new Story(rawStory))
+    console.log(rawStory)
     form.reset()
   }
 }

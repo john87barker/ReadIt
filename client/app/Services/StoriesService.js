@@ -23,5 +23,10 @@ class StoriesService {
     document.getElementById('viewport-story').innerHTML = story.Template
     console.log(story)
   }
+
+  async createStory(rawStory) {
+    const res = await api.post('api/stories', rawStory)
+    console.log('service', res.data)
+  }
 }
 export const storiesService = new StoriesService()
