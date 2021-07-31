@@ -1,6 +1,7 @@
 import BaseController from '..//utils/BaseController'
 import Comment from '../models/Comment'
 import { commentsService } from '../services/CommentsService'
+import { Auth0Provider } from '@bcwdev/auth0provider'
 
 export class CommentsController extends BaseController {
   constructor() {
@@ -8,6 +9,7 @@ export class CommentsController extends BaseController {
     this.router
       .get('', this.getAll)
       .get('/:id', this.getById)
+      .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.create)
       .put('/:id', this.edit)
       .delete('/:id', this.destroy)
@@ -33,6 +35,7 @@ export class CommentsController extends BaseController {
 
   async create(req, res, next) {
     try {
+      req.body.accountId = req.userInfo.id
       const comment = await commentsService.create(req.body)
       res.send(comment)
     } catch (error) {
