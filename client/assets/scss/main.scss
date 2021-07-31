@@ -33,6 +33,11 @@ main {
   max-width: 100px;
 }
 
+.preview-scroll{
+  max-height: 85vh;
+  overflow: auto;
+}
+
 .img-viewport {
   max-height: 400px;
   max-width: 400px;
