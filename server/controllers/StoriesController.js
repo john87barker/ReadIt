@@ -11,6 +11,7 @@ export class StoriesController extends BaseController {
       // NOTE move following to the user router
       .get('/:id/users', this.getStoriesByUserId)
       // NOTE make one to get comments with each of the stories
+      .get('/:id/comments', this.getCommentsByStoryId)
       .post('', this.create)
       .put('/:id', this.edit)
       .delete('/:id', this.destroy)
@@ -21,6 +22,15 @@ export class StoriesController extends BaseController {
     try {
       const stories = await storiesService.getStoriesByUserId({ userId: req.params.id })
       res.send(stories)
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  async getCommentsByStoryId(req, res, next) {
+    try {
+      const comments = await storiesService.getCommentsByStoryId({ storyId: req.params.id })
+      res.send(comments)
     } catch (error) {
       next(error)
     }

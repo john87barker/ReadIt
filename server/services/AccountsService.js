@@ -108,5 +108,9 @@ class AccountsService {
   async getStoriesByAccountId(query) {
     return await dbContext.Stories.find(query)
   }
+
+  async getCommentsByAccountId(query) {
+    return await dbContext.Comments.find(query)
+  }
 }
 export const accountsService = new AccountsService()
