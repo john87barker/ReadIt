@@ -92,12 +92,12 @@
                     </div>
                   </div>
                   <div class="card-body border-top col-12">
-                    <form class="row" action="">
+                    <form class="row" action="" id="comment-form" onsubmit="app.commentsController.createComment()">
                       <small>Comment:</small>
                       <div class="input-group">
-                        <textarea class="form-control" aria-label="With textarea"></textarea>
-                        <button class="btn btn-secondary">SUBMIT</button>
-                    </div>
+                        <textarea name="body" class="form-control" aria-label="With textarea"></textarea>
+                        <button type="submit" class="btn btn-secondary" >SUBMIT</button>
+                      </div>
                     </form>
                   </div>
                 </div>
