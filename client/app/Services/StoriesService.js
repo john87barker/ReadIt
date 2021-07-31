@@ -1,5 +1,6 @@
 import { ProxyState } from '../AppState.js'
 import Story from '../Models/Story.js'
+import { logger } from '../Utils/Logger.js'
 import { api } from './AxiosService.js'
 
 class StoriesService {
@@ -27,6 +28,16 @@ class StoriesService {
   async createStory(rawStory) {
     const res = await api.post('api/stories', rawStory)
     console.log('service', res.data)
+    ProxyState.stories = [...ProxyState.stories, new Story(res.data)]
+  }
+
+  async delete(id) {
+    try {
+      const res = await api.delete('api/stories/' + id)
+      console.log(res.data)
+    } catch (error) {
+      logger.log(error)
+    }
   }
 }
 export const storiesService = new StoriesService()

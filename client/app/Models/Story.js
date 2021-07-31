@@ -1,3 +1,5 @@
+import { ProxyState } from '../AppState.js'
+
 export default class Story {
   constructor({ accountId, upVote = 0, downVote = 0, title, body, imgUrl, id }) {
     this.title = title
@@ -38,6 +40,7 @@ export default class Story {
                     <p>${this.body}</p>
                   </div>
                   </div>
+                  ${this.accountId === ProxyState.account._id ? `<p class="action" onclick="app.storiesController.delete('${this.id}')"> delete </p>` : ''}
                   <div class="card-body border-top col-12">
                     <form onsubmit="app.commentsController.createComment('${this.id}')" class="row" action="">
                       <small>Comment:</small>
