@@ -10,6 +10,7 @@ class AppState extends EventEmitter {
   comments = []
 
   socketData = []
+  image={}
 }
 
 export const ProxyState = new Proxy(new AppState(), {

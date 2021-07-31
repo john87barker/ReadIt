@@ -1,5 +1,5 @@
 export default class Story {
-  constructor({ accountId, upVote, downVote, title, body, imgUrl, id }) {
+  constructor({ accountId, upVote = 0, downVote = 0, title, body, imgUrl, id = '' }) {
     this.title = title
     this.body = body
     this.id = id

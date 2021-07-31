@@ -7,3 +7,8 @@ export const api = axios.create({
   timeout: 8000,
   withCredentials: true
 })
+
+export const picsumApi = axios.create({
+  baseURL: 'https://picsum.photos/id/',
+  timeout: 8000
+})

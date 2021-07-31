@@ -56,6 +56,7 @@ export class StoriesController extends BaseController {
 
   async create(req, res, next) {
     try {
+      req.body.accountId = req.userInfo.id
       const story = await storiesService.create(req.body)
       res.send(story)
     } catch (error) {
