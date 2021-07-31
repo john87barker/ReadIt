@@ -68,6 +68,7 @@ export default class StoriesController {
 
   async delete(id) {
     await storiesService.delete(id)
+    window.location.reload()
   }
 
   async getAllCommentsByStoryId(id) {
