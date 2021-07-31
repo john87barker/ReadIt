@@ -32,21 +32,21 @@ export default class Story {
   get Template() {
     return `
       <div>
-                    <img class="img-fluid img-viewport float-left m-3" src="${this.imgUrl}"></img>
-                  <h2 class="text-center">${this.title}</h2>
-                  <div>
-                    <p>${this.body}</p>
-                  </div>
-                  </div>
-                  <div class="card-body border-top col-12">
-                    <form onsubmit="app.commentsController.createComment('${this.id}')" class="row" action="">
-                      <small>Comment:</small>
-                      <div class="input-group">
-                        <textarea name="body"class="form-control" aria-label="With textarea"></textarea>
-                        <button class="btn btn-secondary" type="submit">SUBMIT</button>
-                    </div>
-                    </form>
-                  </div>
-                  `
+          <img class="img-fluid img-viewport float-left m-3" src="${this.imgUrl}"></img>
+        <h2 class="text-center">${this.title}</h2>
+        <div>
+          <p>${this.body}</p>
+        </div>
+      </div>
+      <div class="card-body border-top col-12">
+        <form onsubmit="app.commentsController.createComment('${this.id}')" class="row" action="">
+          <small>Comment:</small>
+          <div class="input-group">
+            <textarea name="body"class="form-control" aria-label="With textarea"></textarea>
+            <button class="btn btn-secondary" type="submit">SUBMIT</button>
+          </div>
+        </form>
+      </div>
+        `
   }
 }
