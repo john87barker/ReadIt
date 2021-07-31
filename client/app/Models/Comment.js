@@ -13,7 +13,7 @@ export default class Comment {
      <div class="my-1 col-12 d-flex align-items-start p-2 bg-light" >
                   <div class="px-2 d-flex flex-column"><i class="mdi mdi-book-plus-multiple-outline"></i><span>${this.upVote - this.downVote} </span><i class="mdi mdi-book-minus-multiple"></i></div>
                   <div class="d-flex flex-column">
-                    <small>${this.accountId.name}</small>
+                    <small>comment</small>
                 <h6 class="py-1">${this.body}</h6>
                   </div>
                 </div>
