@@ -10731,11 +10731,7 @@ main {
 }
 
 #viewport {
-  height: 80vh;
-}
-
-.comment {
-  border: 1px solid rebeccapurple;
+  height: 50vh;
 }
 
 #viewport-comments {
@@ -10749,13 +10745,13 @@ main {
 }
 
 .preview-scroll {
-  max-height: 85vh;
+  max-height: 75vh;
   overflow: auto;
 }
 
 .img-viewport {
-  max-height: 400px;
-  max-width: 400px;
+  max-height: 200px;
+  max-width: 200px;
 }
 
 .action {
@@ -10763,8 +10759,9 @@ main {
 }
 
 .intro {
-  background-color: #454545;
+  background-color: #DD4058;
   color: #F1FFFA;
+  text-shadow: 1px 1px #454545;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -25,9 +25,9 @@
   }
 </style>
 
-<body class="">
+<body class="bg-warning">
   <header>
-    <nav class="navbar navbar-dark navbar-expand bg-primary text-light">
+    <nav class="navbar navbar-dark navbar-expand bg-secondary text-light">
       <a class="navbar-brand" href="#">
         
 
@@ -69,7 +69,7 @@
     <input type="text " placeholder="Your Title" class="form-control" id="title" aria-describedby="title" name="title">
   </div>
           <div class="input-group px-2">
-            <textarea class="form-control" aria-label="With textarea" placeholder="What story does this image tell..." maxlength="1000" minlength="10" name="body"></textarea>
+            <textarea class="form-control" aria-label="With textarea" placeholder="What story does this image tell..." maxlength="500" minlength="10" name="body"></textarea>
           </div>
         </div>
         <div class="modal-footer">
@@ -78,59 +78,33 @@
         </div>
       </form>
     </div>
-
   </div>
 </div>
 
-      <div class="row my-3 justify-content-around">
-        <div class="col-5 bg-warning">
+      <div class="row justify-content-around bg-warning py-3 ">
+        <div class="col-5 bg-primary">
           <div class="row preview-scroll" id="previews">
             <!-- SECTION Preview Template Start -->
-            <div class="my-1 col-12 d-flex align-items-start p-2">
-              <div class="px-2 d-flex flex-column">
-                <i class="mdi mdi-book-plus-multiple-outline"></i><span>X</span><i class="mdi mdi-book-plus-multiple"></i>
-              </div>
-              <div>
-                <img src="https://picsum.photos/100" class="img-fluid p-2">
-              </div>
-              <div class="d-flex flex-column">
-                <small>USERNAME</small>
-                <h5 class="mt-1">TITLE</h5>
-                <h6>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis consequatur tempore dolorum.
-                </h6>
-              </div>
-            </div>
+            
             <!-- SECTION Preview Template End -->
-            <div class="col-12 d-flex align-items-start p-2 bg-light">
-              <div class="px-2 d-flex flex-column">
-                <i class="mdi mdi-book-plus-multiple-outline"></i><span>X</span><i class="mdi mdi-book-plus-multiple"></i>
-              </div>
-              <div class="d-flex flex-column">
-                <small>USERNAME</small>
-                <h6>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis consequatur tempore dolorum.
-                </h6>
-              </div>
-            </div>
           </div>
         </div>
         <div class="col-6 h-100" id="viewport">
           <div class="row">
                 <div class="col card shadow intro" id="viewport-story">
-                  <h1 class="">Click the 'Create' Button to Make your own Story!</h1>
+                  <h2 class="text-center">Tell Us a Story!</h2>
+                    <div>
+                      <h5>You can read one of the many stories that have already been written by our users. Or you can click "Create" at the top and make your own story based on a randomly generated prompt image! Try it yourself!</h5>
+                    </div>
                 </div>
           </div>
           <div class="row" id="viewport-comments">
             <!-- SECTION Template Comment Start -->
-                
-                  
-              
         </div>
       </div>
     </div>
   </main>
-  <footer class="container-fluid bg-primary text-light">
+  <footer class="container-fluid bg-secondary text-light">
     <div class="row text-center">
       <div class="col">
         <p><small>Made by Sha, Sam, Tom and John</small></p>
