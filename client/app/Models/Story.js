@@ -38,6 +38,15 @@ export default class Story {
                     <p>${this.body}</p>
                   </div>
                   </div>
+                  <div class="card-body border-top col-12">
+                    <form onsubmit="app.commentsController.create()" class="row" action="">
+                      <small>Comment:</small>
+                      <div class="input-group">
+                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                        <button class="btn btn-secondary" type="submit">SUBMIT</button>
+                    </div>
+                    </form>
+                  </div>
                   `
   }
 }
