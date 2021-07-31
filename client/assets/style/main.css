@@ -10748,6 +10748,11 @@ main {
   max-width: 100px;
 }
 
+.preview-scroll {
+  max-height: 85vh;
+  overflow: auto;
+}
+
 .img-viewport {
   max-height: 400px;
   max-width: 400px;
@@ -10755,6 +10760,11 @@ main {
 
 .action {
   cursor: pointer;
+}
+
+.intro {
+  background-color: #454545;
+  color: #F1FFFA;
 }
 
 /*# sourceMappingURL=main.css.map */
